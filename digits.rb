@@ -9,6 +9,15 @@ module Digits
     args.all? { |e| counter == to_counter(e.to_s) }
   end
 
+  # A number is pandigital in base k if it contains every digit from 1 to k - 1.
+  def pandigital?(arg, base, include_zero: false)
+    digits = (1...base).to_set
+    digits << 0 if include_zero
+
+    s = arg.to_s
+    digits.map(&:to_s).all? {|d| s.include?(d)}
+  end
+
   # Get an array of the digits in integer *number*.
   def digits(number)
     return [0] if number.zero?
