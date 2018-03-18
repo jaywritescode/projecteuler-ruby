@@ -3,19 +3,6 @@ require 'set'
 require 'singleton'
 
 module Division
-  def gcd(*args)
-    raise ArgumentError.new('No arguments given.') unless args.count > 0
-
-    case args.count
-    when 1
-      args[0]
-    when 2
-      _gcd(*args)
-    else
-      _gcd(args[0], gcd(*args[1..-1]))
-    end
-  end
-
   def phi(k)
     EulerTotient.instance.calculate(k)
   end
