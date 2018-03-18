@@ -13,7 +13,7 @@ module FibonacciSequence
   # Returns an enumerator over the Fibonacci sequence starting with F_0 = 1 and
   # F_1 = 1.
   def fib(f0: 1, f1: 1)
-    @enum ||= Enumerator.new do |y|
+    Enumerator.new do |y|
       loop do
         y << f0
         f0, f1 = f1, f0 + f1
