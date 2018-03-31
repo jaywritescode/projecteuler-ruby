@@ -12,7 +12,7 @@ module Pythagorean
       queue = [[3, 4, 5]]
 
       loop do
-        triple = queue.pop
+        triple = queue.shift
 
         y << triple
         [m1, m2, m3].each do |m|
