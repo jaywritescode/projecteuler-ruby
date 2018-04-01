@@ -5,7 +5,10 @@ Gem::Specification.new do |s|
   s.summary = 'Math!'
   s.description = "projecteuler.org helper functions"
   s.authors = ["Jay Harris"]
-  s.files = ['lib/projecteuler/pythagorean.rb']
+  s.files = [
+    'lib/projecteuler',
+    'lib/projecteuler/pythagorean.rb'
+  ]
   s.homepage = 'https://github.com/jaywritescode/projecteuler-ruby'
   s.license = 'MIT'
 end
