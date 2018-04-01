@@ -22,6 +22,26 @@ module Pythagorean
     end
   end
 
+  # an alternate enumerator over all primitive pythagorean triples
+  def primitive_tree2
+    m1 = [[2,1,-1],[-2,2,2],[-2,1,3]]
+    m2 = [[2,1,1],[2,-2,2],[2,-1,3]]
+    m3 = [[2,-1,2],[2,2,2],[2,1,3]]
+
+    Enumerator.new do |y|
+      queue = [[3, 4, 5]]
+
+      loop do
+        triple = queue.shift
+
+        y << triple
+        [m1, m2, m3].each do |m|
+          queue << m.map {|row| dot_product(row, triple)}
+        end
+      end
+    end
+  end
+
   private
 
   def dot_product(a, b)
